@@ -10,6 +10,8 @@ metadata:
     - database
     - postgresql
     - book
+    - Dubai
+    - 2024
 spec:
   owner: rhdh-idp-book-authors
   type: service
