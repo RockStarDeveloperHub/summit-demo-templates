@@ -86,7 +86,7 @@ spec:
         url: ./skeleton
         targetPath: ./source
         values:
-          git_host: gitlab.${{parameters.cluster_id}}
+          git_host: gitlab-gitlab.${{parameters.cluster_id}}
           gitlabGroup: ${{parameters.gitlabGroup}}
           repoName: ${{parameters.namespace}}-${{parameters.application_id}}
           owner: ${{parameters.owner}}
@@ -111,7 +111,7 @@ spec:
         url: ./manifests
         copyWithoutTemplating: []
         values:
-          git_host: gitlab.${{parameters.cluster_id}}
+          git_host: gitlab-gitlab.${{parameters.cluster_id}}
           component_id: ${{parameters.namespace}}-${{parameters.application_id}}
           description: ${{parameters.description}}
           destination: https://gitlab.${{parameters.cluster_id}}/${{parameters.gitlabGroup}}/${{parameters.namespace}}-${{parameters.application_id}}-gitops.git
@@ -129,7 +129,7 @@ spec:
       name: Publishing to Deployment Resource Repository
       action: publish:gitlab
       input:
-        repoUrl: gitlab.${{parameters.cluster_id}}?owner=${{parameters.gitlabGroup}}&repo=${{parameters.namespace}}-${{parameters.application_id}}-gitops
+        repoUrl:gitlab-gitlab.${{parameters.cluster_id}}?owner=${{parameters.gitlabGroup}}&repo=${{parameters.namespace}}-${{parameters.application_id}}-gitops
         title: gitops resources for ${{parameters.namespace}}-poi-backend-app
         description: gitops resources for ${{parameters.namespace}}-poi-backend-app
         sourcePath: ./tenant-gitops
