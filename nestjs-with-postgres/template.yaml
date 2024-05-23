@@ -46,7 +46,7 @@ spec:
           title: Cluster Id
           type: string
           description: Id of the cluster
-          default: apps.rosa.menat-tfc.k5n2.p3.openshiftapps.com
+          default: apps.rosa.dubai01.2ew4.p3.openshiftapps.com
         namespace:
           title: Namespace
           type: string
@@ -147,8 +147,8 @@ spec:
       action: argocd:create-resources
       input:
         appName: ${{parameters.namespace}}-${{parameters.application_id}}-bootstrap
-        argoInstance: main
-        namespace: janus-argocd
+        argoInstance: openshift-gitops-server
+        namespace: openshift-gitops
         repoUrl: https://gitlab-gitlab.${{parameters.cluster_id}}/${{parameters.gitlabGroup}}/${{parameters.namespace}}-${{parameters.application_id}}-gitops.git
         path: 'argocd/'
   output:
